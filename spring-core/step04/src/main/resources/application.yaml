@@ -1,0 +1,4 @@
+spring:
+  main:
+#    스프링 기본 값은 true, 최신 스프링 부트 기본 값은 false
+    allow-bean-definition-overriding: true
