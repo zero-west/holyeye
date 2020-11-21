@@ -9,6 +9,7 @@ import me.zw.actualjpa1.domain.item.Item;
 import me.zw.actualjpa1.repository.ItemRepository;
 import me.zw.actualjpa1.repository.MemberRepository;
 import me.zw.actualjpa1.repository.OrderRepository;
+import me.zw.actualjpa1.repository.OrderSearch;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -59,7 +60,7 @@ public class OrderService {
     }
 
     // 검색
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByCriteria(orderSearch);
+    }
 }

@@ -1,6 +1,7 @@
 package me.zw.actualjpa1.service;
 
 import lombok.RequiredArgsConstructor;
+import me.zw.actualjpa1.domain.item.Book;
 import me.zw.actualjpa1.domain.item.Item;
 import me.zw.actualjpa1.repository.ItemRepository;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,14 @@ public class ItemService {
 
     public Item findOne(long itemId) {
         return itemRepository.findOne(itemId);
+    }
+
+    // Dirty checking 을 통한 데이터 변경
+    @Transactional
+    public void updateItem(Long itemId, String name, int price, int stockQuantity) {
+        Item findItem = itemRepository.findOne(itemId);
+        findItem.setName(name);
+        findItem.setPrice(price);
+        findItem.setStockQuantity(stockQuantity);
     }
 }
