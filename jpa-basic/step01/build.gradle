@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'me.zw'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.23.Final'
+    implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
+}
